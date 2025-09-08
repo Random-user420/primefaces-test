@@ -14,8 +14,13 @@
 
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
-
+            <p:datePicker value="#{testView.localDate}" showIcon="true" mask="99.99.9999" pattern="dd.MM.yyyy">
+                <p:ajax process="@this" update="@form"/>
+            </p:datePicker>
+            <br/>
+            <p:selectOneMenu value="#{testView.item}">
+                <f:selectItems value="#{testView.list}"/>
+            </p:selectOneMenu>
         </h:form>
-
     </h:body>
 </html>
